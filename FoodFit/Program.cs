@@ -13,6 +13,10 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
+//я тестирую гит
+//вместе с Мишей
+//интересно, что же будет
+
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
