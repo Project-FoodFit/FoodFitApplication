@@ -17,6 +17,9 @@ if (!app.Environment.IsDevelopment())
 //вместе с Мишей
 //интересно, что же будет
 
+//да уж
+//реально интересно
+
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
