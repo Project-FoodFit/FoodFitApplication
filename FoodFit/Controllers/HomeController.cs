@@ -22,10 +22,6 @@ namespace FoodFit.Controllers
         {
             return View();
         }
-
-        //я тестирую гит
-        //вместе с Мишей
-        //интересно, что же будет
         
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
