@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="wwwroot\Resources\FFlogo.ico" />
+    <None Include="wwwroot\resources\FFlogo.ico" />
   </ItemGroup>
 
 </Project>

@@ -17,40 +17,39 @@
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Главная</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Рецепт</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Фитнес</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Блог</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Контакты</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">        </a>
-                        </li>
-                        <li class="nav-link text-dark">
-                            <input type="text" style="width: 150%"/>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">        </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Войти</a>
-                        </li>
-                    </ul>
-                </div>
+                <ul class="navbar-nav flex-grow-1" style="height:auto">
+                    <li class="navitem">
+                        <a class="navlink" asp-area="" asp-controller="Home" asp-action="Index">Главная</a>
+                    </li>
+                    <li class="navitem">
+                        <a class="navlink" asp-area="" asp-controller="Home" asp-action="Index">Рецепт</a>
+                    </li>
+                    <li class="navitem">
+                        <a class="navlink" asp-area="" asp-controller="Home" asp-action="Index">Фитнес</a>
+                    </li>
+                    <li class="navitem">
+                        <a class="navlink" asp-area="" asp-controller="Home" asp-action="Index">Блог</a>
+                    </li>
+                    <li class="navitem">
+                        <a class="navlink" asp-area="" asp-controller="Home" asp-action="Index">Контакты</a>
+                    </li>
+                    <li class="navitem">
+                        <a class="navlink" asp-area="" asp-controller="Home" asp-action="Index">        </a>
+                    </li>
+                    <li class="navsearch">
+                        <input type="text" style="width: 150%"/>
+                    </li>
+                    <li class="navitem">
+                        <a class="navlink" asp-area="" asp-controller="Home" asp-action="Index">        </a>
+                    </li>
+                    <li class="navitem">
+                        <a class="navlink" asp-area="" asp-controller="Home" asp-action="Index">Войти</a>
+                    </li>
+                </ul>
             </div>
         </nav>
     </header>
+
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
