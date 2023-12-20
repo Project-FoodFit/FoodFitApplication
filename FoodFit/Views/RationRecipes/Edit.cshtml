@@ -1,0 +1,39 @@
+﻿@model FoodFit.Models.RationRecipe
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>RationRecipe</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="ID" />
+            <div class="form-group">
+                <label asp-for="RationID" class="control-label"></label>
+                <select asp-for="RationID" class="form-control" asp-items="ViewBag.RationID"></select>
+                <span asp-validation-for="RationID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RecipeID" class="control-label"></label>
+                <select asp-for="RecipeID" class="form-control" asp-items="ViewBag.RecipeID"></select>
+                <span asp-validation-for="RecipeID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

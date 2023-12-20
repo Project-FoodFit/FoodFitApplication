@@ -1,4 +1,9 @@
+п»їusing Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using FoodFit.Data;
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddDbContext<FoodFitContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("FoodFitContext") ?? throw new InvalidOperationException("Connection string 'FoodFitContext' not found.")));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
@@ -13,12 +18,12 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
-//я тестирую гит
-//вместе с Мишей
-//интересно, что же будет
+//пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ
+//пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅ
+//пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
 
-//да уж
-//реально интересно
+//пїЅпїЅ пїЅпїЅ
+//пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
