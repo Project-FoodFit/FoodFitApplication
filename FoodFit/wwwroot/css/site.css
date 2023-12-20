@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
 
-.container {
+footer {
     background-color: transparent;
     text-align: center;
     text-decoration: none;
@@ -10,6 +10,7 @@
     width: 100%;
     white-space: nowrap;
     line-height: 60px;
+    border-color: transparent;
 }
 
 .navitem {
@@ -17,7 +18,7 @@
     margin: auto;
 }
 
-.navitem > .navlink {
+.navlink {
     text-decoration: none;
     color: #283618;
     font-weight: bolder;
@@ -30,7 +31,21 @@
 }
 
 body {
-    background-image: url("~/resources/full-background.png");
+    background-image: url(../Resources/full-background.png);
     background-size: auto;
     font-family: Dela Gothic One;    
+}
+
+header{
+    background-color: transparent;
+}
+
+.footer-link {
+    text-decoration: none;
+    color: #283618;
+    font-size: 150%;
+}
+
+.footer-link:hover {
+    color: #DDA15E;
 }
