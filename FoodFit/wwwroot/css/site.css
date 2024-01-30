@@ -10,7 +10,6 @@ footer {
     width: 100%;
     white-space: nowrap;
     line-height: 60px;
-    border-color: transparent;
 }
 
 .navitem {
@@ -23,6 +22,10 @@ footer {
     color: #283618;
     font-weight: bolder;
     border-radius: 10%;
+}
+
+.navlink:hover {
+    color: #DDA15E;
 }
 
 .navsearch {
@@ -48,4 +51,24 @@ header{
 
 .footer-link:hover {
     color: #DDA15E;
+}
+
+.container {
+    height: 75%
+}
+
+.homepage {
+    flex-direction: row;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    vertical-align: central;
+    font-family: Dela Gothic One;
+    margin-top: 13%;
+}
+
+#hpimgs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
