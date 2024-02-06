@@ -37,7 +37,11 @@
                         <a class="navlink" asp-area="" asp-controller="Home" asp-action="Index">        </a>
                     </li>
                     <li class="navsearch">
-                        <input type="text" style="width: 150%"/>
+                        @using (Html.BeginForm("Index", "Products", FormMethod.Post))
+                        {
+                            <input type="text" name="searchBox" id="searchBox" style="width: 120%"/>
+                            <input type="submit" name="submitButton" value="submit" style="width: 50%"/>
+                        }
                     </li>
                     <li class="navitem">
                         <a class="navlink" asp-area="" asp-controller="Home" asp-action="Index">        </a>
