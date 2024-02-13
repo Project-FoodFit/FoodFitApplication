@@ -72,3 +72,23 @@ header{
     justify-content: center;
     align-items: center;
 }
+
+#suggestionsList {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 1000;
+}
+
+#suggestionsList ul {
+    padding: 0;
+    margin-left: 0;
+    list-style-type: none;
+}
+
+#suggestionsList li:hover{
+    background-color: lightgray;
+}

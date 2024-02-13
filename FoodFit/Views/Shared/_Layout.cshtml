@@ -37,10 +37,50 @@
                         <a class="navlink" asp-area="" asp-controller="Home" asp-action="Index">        </a>
                     </li>
                     <li class="navsearch">
-                        @using (Html.BeginForm("Index", "Products", FormMethod.Post))
+                        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+                        <script>
+                            $(document).ready(function () {
+                                $('#searchBox').keyup(function () {
+                                    var query = $(this).val();
+                                    $.ajax({
+                                        url: '@Url.Action("SearchSuggestions", "Recipes")',
+                                        type: 'GET',
+                                        data: { query: query },
+                                        success: function (data) {
+                                            $('#suggestionsList').html(data);
+                                            $('#suggestionsList').show();
+                                        }
+                                    });
+                                });
+
+
+                                $('#suggestionsList').on('click', 'li', function () {
+                                    var selectedValue = $(this).text();
+                                    $.ajax({
+                                        url: '/Recipes/NameToId',
+                                        type: 'POST',
+                                        data: { name: selectedValue },
+                                        success: function (id) {
+                                            window.location.href = '@Url.Action("Details", "Recipes")' + '?id=' + id;
+                                        },
+                                        error: function () {
+                                            console.log('Ошибка при выполнении AJAX запроса');
+                                        }
+                                    });
+                                });
+
+                                $('#searchBox').blur(function () {
+                                    setTimeout(function () {
+                                        $('#suggestionsList').hide();
+                                    }, 200);
+                                });
+                            });
+                        </script>
+                        @using (Html.BeginForm("Index", "Recipes", FormMethod.Post))
                         {
-                            <input type="text" name="searchBox" id="searchBox" style="width: 120%"/>
-                            <input type="submit" name="submitButton" value="submit" style="width: 50%"/>
+                            <input type="text" name="searchBox" id="searchBox" style="width: 120%" autocomplete="off"/>
+                            <ul id="suggestionsList"></ul>
+                            <input type="submit" name="submitButton" value="поиск" style="width: 50%" />
                         }
                     </li>
                     <li class="navitem">

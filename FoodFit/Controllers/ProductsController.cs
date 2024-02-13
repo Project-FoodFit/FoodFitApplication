@@ -20,11 +20,9 @@ namespace FoodFit.Controllers
         }
 
         // GET: Products
-        public async Task<IActionResult> Index(IFormCollection form)
+        public async Task<IActionResult> Index()
         {
-            string textFieldValue = form["searchBox"];
-            //var foodFitContext = _context.Product.Include(p => p.ProductType);
-            var foodFitContext = _context.Product.Include(p => p.ProductType).Where(p => p.Title.Contains(textFieldValue));
+            var foodFitContext = _context.Product.Include(p => p.ProductType);
             return View(await foodFitContext.ToListAsync());
         }
 

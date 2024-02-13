@@ -20,10 +20,22 @@ namespace FoodFit.Controllers
         }
 
         // GET: Recipes
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(IFormCollection form)
         {
-            var foodFitContext = _context.Recipe.Include(r => r.RecipeType).Include(r => r.TimeOfReceipt);
-            return View(await foodFitContext.ToListAsync());
+            if (form.Count == 0)
+            {
+                var foodFitContext = _context.Recipe.Include(r => r.RecipeType).Include(r => r.TimeOfReceipt);
+                return View(await foodFitContext.ToListAsync());
+            }
+            string textFieldValue = form["searchBox"];
+            var foodFitContextSearch = _context.Recipe.Include(r => r.RecipeType).Where(r => r.Title.Contains(textFieldValue));
+            return View(await foodFitContextSearch.ToListAsync());
+        }
+        [HttpGet]
+        public ActionResult SearchSuggestions(string query)
+        {
+            var suggestions = _context.Recipe.Include(r => r.RecipeType).Where(r => r.Title.Contains(query)).Select(r => r.Title).ToList();
+            return PartialView("_SuggestionsList", suggestions);
         }
 
         // GET: Recipes/Details/5
@@ -44,6 +56,12 @@ namespace FoodFit.Controllers
             }
 
             return View(recipe);
+        }
+        [HttpPost]
+        public ActionResult NameToId(string name)
+        {
+            int id = _context.Recipe.FirstOrDefault(r => r.Title == name).ID;
+            return Json(id);
         }
 
         // GET: Recipes/Create
