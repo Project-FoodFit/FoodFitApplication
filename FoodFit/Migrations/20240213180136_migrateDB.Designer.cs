@@ -3,6 +3,7 @@ using FoodFit.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,13 +11,14 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FoodFit.Migrations
 {
     [DbContext(typeof(FoodFitContext))]
-    partial class FoodFitContextModelSnapshot : ModelSnapshot
+    [Migration("20240213180136_migrateDB")]
+    partial class migrateDB
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "6.0.26")
+                .HasAnnotation("ProductVersion", "6.0.23")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
@@ -248,7 +250,7 @@ namespace FoodFit.Migrations
                     b.ToTable("TimeOfReceipt");
                 });
 
-            modelBuilder.Entity("FoodFit.Models.Users", b =>
+            modelBuilder.Entity("FoodFit.Models.User", b =>
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
@@ -282,7 +284,7 @@ namespace FoodFit.Migrations
 
                     b.HasIndex("RoleID");
 
-                    b.ToTable("Users");
+                    b.ToTable("User");
                 });
 
             modelBuilder.Entity("FoodFit.Models.Workout", b =>
@@ -417,7 +419,7 @@ namespace FoodFit.Migrations
                     b.Navigation("Recipe");
                 });
 
-            modelBuilder.Entity("FoodFit.Models.Users", b =>
+            modelBuilder.Entity("FoodFit.Models.User", b =>
                 {
                     b.HasOne("FoodFit.Models.Role", "Role")
                         .WithMany()

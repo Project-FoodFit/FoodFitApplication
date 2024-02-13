@@ -20,7 +20,7 @@ namespace FoodFit.Data
 
         public DbSet<FoodFit.Models.Role>? Role { get; set; }
 
-        public DbSet<FoodFit.Models.User>? User { get; set; }
+        public DbSet<FoodFit.Models.Users>? Users { get; set; }
 
         public DbSet<FoodFit.Models.TimeOfReceipt>? TimeOfReceipt { get; set; }
 

@@ -11,6 +11,7 @@
         public double Carbonhydrates { get; set; }
         public int RecipeTypeID { get; set; }
         public int TimeOfReceiptID { get; set; }
+        public string? Image { get; set; }
         public RecipeType RecipeType { get; set; }
         public TimeOfReceipt TimeOfReceipt { get; set; }
     }
