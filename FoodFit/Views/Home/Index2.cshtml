@@ -1,4 +1,6 @@
-﻿@{
+﻿@model FoodFit.Models.Users;
+
+@{
     ViewData["Title"] = "";
 }
 
@@ -11,32 +13,34 @@
     </ul>
 
     <div class="tab-content">
+
+
         <div id="signup">
             <h1>Приветствую!</h1>
 
-            <form action="/" method="post">
-              
+            <form asp-controller="Home" asp-action="Registration" method="post">
+
                 <div style="flex-direction: row">
                     <div style="">
                         <div class="field-wrap">
                             <label>
                                 Имя<span class="req">*</span>
                             </label>
-                            <input type="text" required autocomplete="off" />
+                            <input type="text" required autocomplete="off" asp-for="Name" />
                         </div>
 
                         <div class="field-wrap">
                             <label>
                                 Фамилия<span class="req">*</span>
                             </label>
-                            <input type="text" required autocomplete="off" />
+                            <input type="text" required autocomplete="off" asp-for="Surname" />
                         </div>
 
                         <div class="field-wrap">
                             <label>
                                 Отчество<span class="req">*</span>
                             </label>
-                            <input type="text" required autocomplete="off" />
+                            <input type="text" required autocomplete="off" asp-for="Patronymic" />
                         </div>
                     </div>
 
@@ -45,22 +49,21 @@
                             <label>
                                 Электронная почта<span class="req">*</span>
                             </label>
-                            <input type="email" required autocomplete="off" />
+                            <input type="email" required autocomplete="off" asp-for="Email" />
                         </div>
 
                         <div class="field-wrap">
                             <label>
                                 Пароль<span class="req">*</span>
                             </label>
-                            <input type="password" required autocomplete="off" />
+                            <input type="password" required autocomplete="off" asp-for="Password" />
                         </div>
-
-                        <div class="field-wrap">
-                            <label>
-                                Подтвердите пароль<span class="req">*</span>
-                            </label>
-                            <input type="password" required autocomplete="off" />
-                        </div>
+                        @if (ViewData["ValidateMessage"] != null)
+                        {
+                            <br />
+                            <br />
+                            <label>@ViewData["ValidateMessage"]</label>
+                        }
                     </div>
                 </div>
 
@@ -73,20 +76,20 @@
         <div id="login">
             <h1>С возвращением!</h1>
 
-            <form action="/" method="post">
+            <form asp-controller="Home" asp-action="Login" method="post">
 
                 <div class="field-wrap">
                     <label>
                         Электронная почта<span class="req">*</span>
                     </label>
-                    <input type="email" required autocomplete="off" />
+                    <input type="email" required autocomplete="off" asp-for="Email"/>
                 </div>
 
                 <div class="field-wrap">
                     <label>
                         Пароль<span class="req">*</span>
                     </label>
-                    <input type="password" required autocomplete="off" />
+                    <input type="password" required autocomplete="off" asp-for="Password"/>
                 </div>
 
                 <button class="button button-block">Войти</button>
@@ -94,6 +97,8 @@
             </form>
 
         </div>
+
+        
 
     </div>
 

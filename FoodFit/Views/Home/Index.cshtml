@@ -1,7 +1,12 @@
 ﻿@{
     ViewData["Title"] = "Главная страница";
 }
-
+@if (ViewBag.AlertMessage != null)
+{
+    <script>
+        alert('@ViewBag.AlertMessage');
+    </script>
+}
 
 <div class="homepage">
     <div id="hptxtf" style="width: 69%;">
