@@ -6,9 +6,6 @@
 
 <h1 style="font-size: 400%; color: #283618; font-weight: 900">Рецепты</h1>
 
-@* <p>
-    <a asp-action="Create" style="text-decoration: none; font-size: 200%; color: #283618; font-weight: 300">Добавить</a>
-</p> *@
 <table class="table">
     <tbody style="height: 630px; display:flex; flex-direction:column; overflow-y: scroll; overflow-x: hidden; border: none">
 @foreach (var item in Model) {
@@ -22,11 +19,11 @@
                         @Html.DisplayFor(modelItem => item.Title)
                     </p>
                 <p id="hptxts" style="font-size: 150%;">
-                        @Html.DisplayFor(modelItem => item.Description)
-                    </p>
-                    <p id="hptxts" style="font-size: 150%; flex-direction: row">
-                        @Html.DisplayFor(modelItem => item.RecipeType.Title) на @Html.DisplayFor(modelItem => item.TimeOfReceipt.Title)
-                    </p>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </p>
+                <p id="hptxts" style="font-size: 150%; flex-direction: row">
+                    @Html.DisplayFor(modelItem => item.RecipeType.Title) на @Html.DisplayFor(modelItem => item.TimeOfReceipt.Title)
+                </p>
                 <table style="font-size: 150%;">
                     <thead>
                         <tr>

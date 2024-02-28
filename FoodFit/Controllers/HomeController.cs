@@ -28,10 +28,16 @@ namespace FoodFit.Controllers
             }
             return View();
         }
-        public IActionResult Index2()
+        public IActionResult Login()
         {
             return View();
         }
+        public IActionResult Contacts()
+        {
+            return View();
+        }
+
+
         [HttpPost]
         public async Task<IActionResult> Registration(Users modelRegistration)
         {

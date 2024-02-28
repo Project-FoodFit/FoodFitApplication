@@ -297,3 +297,11 @@ textarea {
     margin-top: -20px;
     text-align: right;
 }
+
+#contactinfohead{
+    font-size: 300%
+}
+
+#contactinfo{
+    font-size:150%
+}
