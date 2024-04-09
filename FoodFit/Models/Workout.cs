@@ -1,4 +1,6 @@
-﻿namespace FoodFit.Models
+﻿using System.ComponentModel.DataAnnotations.Schema;
+using System.Drawing;
+namespace FoodFit.Models
 {
     public class Workout
     {
@@ -7,6 +9,8 @@
         public string? Description { get; set; }
         public int WorkoutTypeID { get; set; }
         public double DurationOfTraining { get; set; }
+        [NotMapped]
+        public Image? Image { get; set; } 
         public WorkoutType WorkoutType { get; set; }
     }
 }
